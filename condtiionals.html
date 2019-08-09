@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title Page</title>
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="x > 0">This is the third time</p>
+      <p v-else>This is the second the second time</p>
+      <button @click="show = !show">Switch</button>
+      <template v-if="show">
+        <h3>Enjoying Vue</h3>
+        <p>You want to enjoy vue with me then you better start practicing</p>
+      </template>
+
+      <ul>
+        <li v-for="(ing, k) in ingredients">{{ ing }} ({{ k }})</li>
+      </ul>
+      <template v-for="(person, j) in persons">
+        <ol>
+          <li>
+            {{ person.name }}\
+          6
+          </li>
+          <li>
+            {{ person.Age }}
+          </li>
+          <li>
+            {{ person.color }}
+          </li>
+        </ol>
+      </template>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          show: true,
+          x: 5,
+          ingredients: ["Onions", "Carrot", "Vegetables", "Tomatoes"],
+          persons: [
+            { name: "Colley", Age: 25, color: "Blue" },
+            { name: "Anna", Age: "unknown", color: "pink" }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>

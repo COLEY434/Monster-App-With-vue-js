@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title Page</title>
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="Wa">
+      <h3>{{ message }}</h3>
+      <p>Computed name: {{ displayName }}</p>
+      <p>Uncomputed name: {{ showName() }}</p>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#Wa",
+        data: {
+          message: "Working",
+          firstname: "collichigoziens",
+          lastname: "Anieze"
+        },
+        methods: {
+          showName: function() {
+            return this.firstname + " " + this.lastname;
+          }
+        },
+        computed: {
+          displayName: function() {
+            return this.firstname + " " + this.lastname;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
